@@ -1,0 +1,42 @@
+TARGET = Some("x86_64-pc-windows-msvc")
+OPT_LEVEL = Some("0")
+TARGET = Some("x86_64-pc-windows-msvc")
+HOST = Some("x86_64-pc-windows-msvc")
+TARGET = Some("x86_64-pc-windows-msvc")
+TARGET = Some("x86_64-pc-windows-msvc")
+HOST = Some("x86_64-pc-windows-msvc")
+CC_x86_64-pc-windows-msvc = None
+CC_x86_64_pc_windows_msvc = None
+HOST_CC = None
+CC = None
+TARGET = Some("x86_64-pc-windows-msvc")
+HOST = Some("x86_64-pc-windows-msvc")
+CFLAGS_x86_64-pc-windows-msvc = None
+CFLAGS_x86_64_pc_windows_msvc = None
+HOST_CFLAGS = None
+CFLAGS = None
+DEBUG = Some("true")
+running: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\cl.exe" "/nologo" "/MD" "/Z7" "/W4" "/FoC:\\Users\\heric\\OneDrive\\Documentos\\GitHub\\Titools_CLI\\target\\debug\\build\\runas-4e849d937c917b37\\out\\runas-windows.o" "/c" "runas-windows.c"
+runas-windows.c
+runas-windows.c(12): warning C4133: '=': tipos incompat°veis - de 'unsigned short [6]' para 'LPCSTR'
+runas-windows.c(13): warning C4047: '=': 'LPCSTR' difere em n°veis de indireá∆o de 'LPCTSTR *'
+runas-windows.c(14): warning C4047: '=': 'LPCSTR' difere em n°veis de indireá∆o de 'LPCTSTR *'
+runas-windows.c(17): warning C4133: 'funá∆o': tipos incompat°veis - de 'SHELLEXECUTEINFO *' para 'SHELLEXECUTEINFOW *'
+runas-windows.c(18): warning C4245: 'return': convers∆o de 'int' para 'DWORD', incompatibilidade de signed/unsigned
+runas-windows.c(24): warning C4245: 'return': convers∆o de 'int' para 'DWORD', incompatibilidade de signed/unsigned
+exit code: 0
+TARGET = Some("x86_64-pc-windows-msvc")
+running: "C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\VC\\Tools\\MSVC\\14.29.30133\\bin\\HostX64\\x64\\lib.exe" "/OUT:C:\\Users\\heric\\OneDrive\\Documentos\\GitHub\\Titools_CLI\\target\\debug\\build\\runas-4e849d937c917b37\\out\\librunas.a" "/nologo" "C:\\Users\\heric\\OneDrive\\Documentos\\GitHub\\Titools_CLI\\target\\debug\\build\\runas-4e849d937c917b37\\out\\runas-windows.o"
+exit code: 0
+TARGET = Some("x86_64-pc-windows-msvc")
+HOST = Some("x86_64-pc-windows-msvc")
+TARGET = Some("x86_64-pc-windows-msvc")
+TARGET = Some("x86_64-pc-windows-msvc")
+HOST = Some("x86_64-pc-windows-msvc")
+CC_x86_64-pc-windows-msvc = None
+CC_x86_64_pc_windows_msvc = None
+HOST_CC = None
+CC = None
+cargo:rustc-link-lib=static=runas
+cargo:rustc-link-search=native=C:\Users\heric\OneDrive\Documentos\GitHub\Titools_CLI\target\debug\build\runas-4e849d937c917b37\out
+cargo:rustc-link-lib=ole32

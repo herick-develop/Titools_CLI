@@ -1,0 +1,9 @@
+C:\Users\heric\OneDrive\Documentos\GitHub\Titools_CLI\target\debug\deps\libanstyle_parse-4e6fc28075d9cb3f.rmeta: C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-parse-0.2.4\src\lib.rs C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-parse-0.2.4\src\params.rs C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-parse-0.2.4\src\state\mod.rs C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-parse-0.2.4\src\state\definitions.rs C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-parse-0.2.4\src\state\table.rs
+
+C:\Users\heric\OneDrive\Documentos\GitHub\Titools_CLI\target\debug\deps\anstyle_parse-4e6fc28075d9cb3f.d: C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-parse-0.2.4\src\lib.rs C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-parse-0.2.4\src\params.rs C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-parse-0.2.4\src\state\mod.rs C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-parse-0.2.4\src\state\definitions.rs C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-parse-0.2.4\src\state\table.rs
+
+C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-parse-0.2.4\src\lib.rs:
+C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-parse-0.2.4\src\params.rs:
+C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-parse-0.2.4\src\state\mod.rs:
+C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-parse-0.2.4\src\state\definitions.rs:
+C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\anstyle-parse-0.2.4\src\state\table.rs:
