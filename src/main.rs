@@ -1,0 +1,108 @@
+use clap::{App, Arg};
+use dotenv::dotenv;
+use std::env;
+
+mod modules {
+    pub mod anydesk {
+        pub mod anydesk_id;
+        pub mod anydesk_install;
+        pub mod anydesk_password;
+    }
+    pub mod printer {
+        pub mod printer_spool_restart;
+        pub mod printer_share;
+    }
+    pub mod titools {
+        pub mod titools;
+    }
+}
+
+use modules::anydesk::{
+    anydesk_id::anydesk_id,
+    anydesk_install::anydesk_install,
+    anydesk_password::anydesk_password
+};
+use modules::printer::{
+    printer_spool_restart::printer_spool_restart,
+    printer_share::printer_share
+};
+use modules::titools::{
+    titools::titools
+};
+
+fn main() {
+
+    dotenv().ok();
+
+    let dir_titools = match env::var("dir_titools") {
+        Ok(val) => val,
+        Err(e) => {
+            eprintln!("Failed to read dir_titools environment variable: {}", e);
+            return;
+        }
+    };
+
+    let matches = App::new("titools_cli")
+        .version("1.0")
+        .author("Herick Lucas")
+        .about("tools command")
+        .arg(
+            Arg::with_name("restart_spool")
+                .long("rimp")
+                .help("Restart the Printer Spool")
+        )
+        .arg(
+            Arg::with_name("printer_share")
+                .long("shimp")
+                .help("Share the printer")
+        )
+        .arg(
+            Arg::with_name("anydesk_id")
+                .long("idany")
+                .help("AnyDesk ID")
+        )
+        .arg(
+            Arg::with_name("anydesk_install")
+                .long("iany")
+                .help("AnyDesk Install")
+        )
+        .arg(
+            Arg::with_name("anydesk_set_password")
+                .long("pwany")
+                .help("Anydesk Password")
+        )
+        .arg(
+            Arg::with_name("ti_tools")
+                .long("titools")
+                .help("TITools")
+        )
+        .get_matches();
+
+    if matches.is_present("restart_spool") {
+        printer_spool_restart().unwrap_or_else(|e| eprintln!("Failed to restart printer spooler: {}", e));
+    }
+
+    if matches.is_present("printer_share") {
+        printer_share(&dir_titools).unwrap_or_else(|e| eprintln!("Failed to share printer: {}", e));
+        printer_spool_restart().unwrap_or_else(|e| eprintln!("Failed to restart printer spooler: {}", e));
+        println!("If not solve restart this computer");
+    }
+
+    if matches.is_present("anydesk_id") {
+        anydesk_id().unwrap_or_else(|e| eprintln!("Failed to get AnyDesk ID: {}", e));
+    }
+
+    if matches.is_present("anydesk_install") {
+        anydesk_install(&dir_titools).unwrap_or_else(|e| eprintln!("Failed to install AnyDesk: {}", e));
+        anydesk_id().unwrap_or_else(|e| eprintln!("Failed to get AnyDesk ID: {}", e));
+        anydesk_password(&dir_titools).unwrap_or_else(|e| eprintln!("Failed to install AnyDesk: {}", e));
+    }
+
+    if matches.is_present("anydesk_set_password") {
+        anydesk_password(&dir_titools).unwrap_or_else(|e| eprintln!("Failed to set AnyDesk password: {}", e));
+    }
+
+    if matches.is_present("ti_tools") {
+        titools(&dir_titools).unwrap_or_else(|e| eprintln!("Failed to Open TITools: {}", e));
+    }
+}
