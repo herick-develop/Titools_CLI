@@ -1,9 +1,0 @@
-C:\Users\heric\OneDrive\Documentos\GitHub\Titools_CLI\target\debug\deps\libcargo_metadata-53cde6cd54cc6b56.rmeta: C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cargo_metadata-0.18.1\src\lib.rs C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cargo_metadata-0.18.1\src\dependency.rs C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cargo_metadata-0.18.1\src\diagnostic.rs C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cargo_metadata-0.18.1\src\errors.rs C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cargo_metadata-0.18.1\src\messages.rs
-
-C:\Users\heric\OneDrive\Documentos\GitHub\Titools_CLI\target\debug\deps\cargo_metadata-53cde6cd54cc6b56.d: C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cargo_metadata-0.18.1\src\lib.rs C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cargo_metadata-0.18.1\src\dependency.rs C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cargo_metadata-0.18.1\src\diagnostic.rs C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cargo_metadata-0.18.1\src\errors.rs C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cargo_metadata-0.18.1\src\messages.rs
-
-C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cargo_metadata-0.18.1\src\lib.rs:
-C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cargo_metadata-0.18.1\src\dependency.rs:
-C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cargo_metadata-0.18.1\src\diagnostic.rs:
-C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cargo_metadata-0.18.1\src\errors.rs:
-C:\Users\heric\.cargo\registry\src\index.crates.io-6f17d22bba15001f\cargo_metadata-0.18.1\src\messages.rs:
