@@ -2,20 +2,12 @@ use std::io;
 use runas::Command as RunasCommand;
 
 use super::printer_spool_restart::printer_spool_restart;
+use crate::functions::execute_reg::execute_reg;
 
 pub fn printer_share(dir_titools: &str) -> Result<(), Box<dyn std::error::Error>> {
 
-    let service_regedit = RunasCommand::new("regedit")
-        .arg("/S")
-        .arg(format!("{}\\Dependencies\\registros\\habilitaImpressora.reg", dir_titools))
-        .status()
-        .expect("Falha ao executar regedit.exe");
+    execute_reg(&format!("{}\\Dependencies\\registros\\habilitaImpressora.reg",dir_titools));
 
-    if service_regedit.success() {
-        println!("Regedit changed successfully");
-    } else {
-        eprintln!("Failed to change Regedit");
-    }
     printer_spool_restart().unwrap_or_else(|e| eprintln!("Failed to restart printer spooler: {}", e));
 
     let features = vec![
@@ -48,7 +40,7 @@ fn enable_feature(feature_name: &str) -> Result<(), io::Error> {
 
     match result {
         Ok(_) => {
-            println!("Printer Services enabled");
+            println!("Printer Feature Enabled: {feature_name}");
             Ok(())
         }
         Err(e) => {

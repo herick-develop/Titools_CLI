@@ -13,6 +13,7 @@ static_vcruntime = "2.0"
 cargo-wix = "0.3.8"
 lazy_static = "1.4.0"
 dotenv = "0.15.0"
+winreg = "0.52.0"
 
 [build-dependencies]
 clap = "3.0"
@@ -20,3 +21,4 @@ runas = "0.1"
 static_vcruntime = "2.0"
 lazy_static = "1.4.0"
 dotenv = "0.15.0"
+winreg = "0.52.0"

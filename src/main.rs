@@ -2,6 +2,11 @@ use clap::{App, Arg};
 use dotenv::dotenv;
 use std::env;
 
+mod functions {
+    pub mod execute_reg;
+    pub mod file_copy;
+}
+
 mod modules {
     pub mod anydesk {
         pub mod anydesk_id;
@@ -14,6 +19,9 @@ mod modules {
     }
     pub mod titools {
         pub mod titools;
+    }
+    pub mod installer {
+        pub mod install_local;
     }
 }
 
@@ -29,7 +37,11 @@ use modules::printer::{
 use modules::titools::{
     titools::titools
 };
+use modules::installer::{
+    install_local::install_local
+};
 
+// \\10.11.50.50\driveti\driveti\Sistemas_Umuprev\Titools\Apps\bin
 fn main() {
 
     dotenv().ok();
@@ -76,6 +88,11 @@ fn main() {
                 .long("titools")
                 .help("TITools")
         )
+        .arg(
+            Arg::with_name("install_local")
+                .long("linstall")
+                .help("Install Tech")
+        )
         .get_matches();
 
     if matches.is_present("restart_spool") {
@@ -104,5 +121,9 @@ fn main() {
 
     if matches.is_present("ti_tools") {
         titools(&dir_titools).unwrap_or_else(|e| eprintln!("Failed to Open TITools: {}", e));
+    }
+    if matches.is_present("install_local") {
+        // install().unwrap_or_else(|e| eprintln!("Failed to Open TITools: {}", e));
+        install_local(&dir_titools).unwrap_or_else(|e| eprintln!("Failed to Open TITools: {}", e));
     }
 }
