@@ -4,7 +4,6 @@ use std::env;
 
 mod functions {
     pub mod execute_reg;
-    pub mod file_copy;
     pub mod msi_install;
 }
 
@@ -27,8 +26,8 @@ mod modules {
     pub mod titools {
         pub mod titools;
     }
-    pub mod installer {
-        pub mod install_local;
+    pub mod tech_cli {
+        pub mod tech_cli_update;
     }
 }
 
@@ -50,11 +49,10 @@ use modules::printer::{
 use modules::titools::{
     titools::titools
 };
-use modules::installer::{
-    install_local::install_local
+use modules::tech_cli::{
+    tech_cli_update::tech_cli_update
 };
 
-// \\10.11.50.50\driveti\driveti\Sistemas_Umuprev\Titools\Apps\bin
 fn main() {
 
     dotenv().ok();
@@ -112,9 +110,9 @@ fn main() {
                 .help("TITools")
         )
         .arg(
-            Arg::with_name("install_local")
-                .long("linstall")
-                .help("Install Tech")
+            Arg::with_name("tech_cli_update")
+                .long("utech")
+                .help("Update Tech CLI")
         )
         .get_matches();
 
@@ -153,8 +151,8 @@ fn main() {
     if matches.is_present("ti_tools") {
         titools(&dir_titools).unwrap_or_else(|e| eprintln!("Failed to Open TITools: {}", e));
     }
-    if matches.is_present("install_local") {
+    if matches.is_present("tech_cli_update") {
         // install().unwrap_or_else(|e| eprintln!("Failed to Open TITools: {}", e));
-        install_local(&dir_titools).unwrap_or_else(|e| eprintln!("Failed to Open TITools: {}", e));
+        tech_cli_update(&dir_titools).unwrap_or_else(|e| eprintln!("Failed to Open TITools: {}", e));
     }
 }
