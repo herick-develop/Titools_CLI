@@ -5,6 +5,7 @@ use std::env;
 mod functions {
     pub mod execute_reg;
     pub mod file_copy;
+    pub mod msi_install;
 }
 
 mod modules {
@@ -12,6 +13,9 @@ mod modules {
         pub mod anydesk_id;
         pub mod anydesk_install;
         pub mod anydesk_password;
+    }
+    pub mod seven_zip {
+        pub mod seven_zip_install;
     }
     pub mod printer {
         pub mod printer_spool_restart;
@@ -29,6 +33,9 @@ use modules::anydesk::{
     anydesk_id::anydesk_id,
     anydesk_install::anydesk_install,
     anydesk_password::anydesk_password
+};
+use modules::seven_zip::{
+    seven_zip_install::seven_zip_install
 };
 use modules::printer::{
     printer_spool_restart::printer_spool_restart,
@@ -79,6 +86,11 @@ fn main() {
                 .help("AnyDesk Install")
         )
         .arg(
+            Arg::with_name("7z_install")
+                .long("i7z")
+                .help("7z Install")
+        )
+        .arg(
             Arg::with_name("anydesk_set_password")
                 .long("pwany")
                 .help("Anydesk Password")
@@ -117,6 +129,10 @@ fn main() {
 
     if matches.is_present("anydesk_set_password") {
         anydesk_password(&dir_titools).unwrap_or_else(|e| eprintln!("Failed to set AnyDesk password: {}", e));
+    }
+
+    if matches.is_present("7z_install") {
+        seven_zip_install(&dir_titools).unwrap_or_else(|e| eprintln!("Failed to install 7z: {}", e));
     }
 
     if matches.is_present("ti_tools") {
