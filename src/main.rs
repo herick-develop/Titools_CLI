@@ -17,6 +17,9 @@ mod modules {
     pub mod seven_zip {
         pub mod seven_zip_install;
     }
+    pub mod firefox {
+        pub mod firefox_install;
+    }
     pub mod printer {
         pub mod printer_spool_restart;
         pub mod printer_share;
@@ -36,6 +39,9 @@ use modules::anydesk::{
 };
 use modules::seven_zip::{
     seven_zip_install::seven_zip_install
+};
+use modules::firefox::{
+    firefox_install::firefox_install
 };
 use modules::printer::{
     printer_spool_restart::printer_spool_restart,
@@ -91,6 +97,11 @@ fn main() {
                 .help("7z Install")
         )
         .arg(
+            Arg::with_name("firefox_install")
+                .long("iff")
+                .help("Firefox Install")
+        )
+        .arg(
             Arg::with_name("anydesk_set_password")
                 .long("pwany")
                 .help("Anydesk Password")
@@ -133,6 +144,10 @@ fn main() {
 
     if matches.is_present("7z_install") {
         seven_zip_install(&dir_titools).unwrap_or_else(|e| eprintln!("Failed to install 7z: {}", e));
+    }
+
+    if matches.is_present("firefox_install") {
+        firefox_install(&dir_titools).unwrap_or_else(|e| eprintln!("Failed to install 7z: {}", e));
     }
 
     if matches.is_present("ti_tools") {

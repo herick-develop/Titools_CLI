@@ -14,7 +14,7 @@ pub fn seven_zip_install(dir_titools: &str) -> Result<(), Box<dyn std::error::Er
     }
 
     if let Err(err) = msi_install(&format!("{}\\Apps\\7z_x64.msi", dir_titools)) {
-        println!("Error installing AnyDesk: {}", err);
+        println!("Error installing 7z: {}", err);
         return Err(err.into());
     }
 
