@@ -66,7 +66,7 @@ fn main() {
     };
 
     let matches = App::new("titools_cli")
-        .version("1.0")
+        .version("1.1")
         .author("Herick Lucas")
         .about("tools command")
         .arg(

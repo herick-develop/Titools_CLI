@@ -4,7 +4,7 @@ use runas::Command as RunasCommand;
 pub fn tech_cli_update(dir_titools: &str) -> io::Result<()> {
 
     let output = RunasCommand::new("cmd")
-    .args(&["/C", &format!("{}\\Modules\\Ferramentas\\tech_update.bat",dir_titools), "/qb"])
+    .args(&["/C", &format!("{}\\Modules\\Ferramentas\\tech_update.bat", dir_titools), "/qb"])
     .status();
 
     match output {
