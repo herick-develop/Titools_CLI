@@ -1,7 +1,7 @@
 # Titools_CLI
 Automate windows processes
 
-![Alt text](Tech_cli.png)
+![Alt text](Titools_CLI.png)
 
 # Run with Cargo
 cargo run -- --test
